@@ -1,16 +1,14 @@
-[
-{
-  "modid": "enhancedcore",
+[{
+  "modid": "${mod_id}",
   "name": "Enhanced Core",
-  "description": "A base for all of Alz454's mods",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["Alz454"],
+  "version": "${mod_version}",
+  "mcversion": "${mc_version}",
+  "url": "https://github.com/enhancedportals/core",
   "credits": "",
+  "authorList": [ "Alz454" ],
+  "description": "",
   "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
-]
+  "updateUrl": "https://github.com/enhancedportals/core",
+  "parent": "",
+  "screenshots": [ ]
+}]

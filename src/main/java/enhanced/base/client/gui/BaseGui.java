@@ -20,12 +20,10 @@ import org.lwjgl.opengl.GL12;
 import enhanced.base.client.gui.elements.BaseElement;
 import enhanced.base.client.gui.tabs.BaseTab;
 import enhanced.base.client.gui.tabs.TabTracker;
-import enhanced.base.utilities.Localization;
+import enhanced.base.inventory.BaseContainer;
 import enhanced.core.EnhancedCore;
-import enhanced.portals.EnhancedPortals;
-import enhanced.portals.inventory.BaseContainer;
 
-public abstract class BaseGui extends GuiContainer {
+public class BaseGui extends GuiContainer {
     RenderItem itemRenderer = new RenderItem();
     protected static final ResourceLocation playerInventoryTexture = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/player_inventory.png"), resizableInterfaceTexture = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/resizable_interace.png");
     protected int mouseX = 0, mouseY = 0;
@@ -219,6 +217,10 @@ public abstract class BaseGui extends GuiContainer {
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         }
     }
+    
+    protected void drawGuiBackgroundLayer(float f, int i, int j) {
+    	drawGuiBackgroundLayer(f, i, j);
+    }
 
     @Override
     public void updateScreen() {
@@ -250,7 +252,7 @@ public abstract class BaseGui extends GuiContainer {
     @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2) {
         if (name != null)
-            getFontRenderer().drawString(Localization.get(EnhancedPortals.MOD_ID, name), (xSize - mc.fontRenderer.getStringWidth(Localization.get(EnhancedPortals.MOD_ID, name))) / 2, 6, 0x404040);
+            getFontRenderer().drawString(name, (xSize - mc.fontRenderer.getStringWidth(name)) / 2, 6, 0x404040);
 
         BaseElement element = getElementAtPosition(mouseX, mouseY);
 
