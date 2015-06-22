@@ -1,0 +1,16 @@
+[
+{
+  "modid": "enhancedcore",
+  "name": "Enhanced Core",
+  "description": "A base for all of Alz454's mods",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Alz454"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

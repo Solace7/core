@@ -1,0 +1,11 @@
+# Chat Messages
+enhancedcore.chat.updateMessage=There is an update available for Enhanced Core (%1$s)
+
+# Tabs
+enhancedcore.tab.redstoneFlux=Energy
+enhancedcore.tab.redstoneFlux.maxPower=Maximum Energy:
+enhancedcore.tab.redstoneFlux.storedPower=Stored Energy:
+enhancedcore.tab.redstoneFlux.powerUsage=Energy Usage:
+
+# Creative
+itemGroup.enhancedcore=Enhanced Core
