@@ -12,7 +12,7 @@ import enhanced.core.network.ProxyCommon;
 
 @Mod(name = EnhancedCore.MOD_NAME, modid = EnhancedCore.MOD_ID, version = EnhancedCore.MOD_VERSION, dependencies = EnhancedCore.MOD_DEPENDENCIES)
 public class EnhancedCore extends BaseMod {
-    public static final String MOD_ID = "enhancedcore", MOD_ID_SHORT = "ecore", MOD_NAME = "Enhanced Core", MOD_URL = "https://raw.githubusercontent.com/enhancedportals/VERSION/master/VERSION%20-%20Enhanced%20Core", MOD_VERSION = "1.0", MOD_DEPENDENCIES = "after:ThermalExpansion";
+    public static final String MOD_ID = "enhancedcore", MOD_ID_SHORT = "ecore", MOD_NAME = "Enhanced Core", MOD_URL = "https://raw.githubusercontent.com/enhancedportals/VERSION/master/VERSION%20-%20Enhanced%20Core", MOD_VERSION = "1.0.0", MOD_DEPENDENCIES = "after:ThermalExpansion";
 
     @Instance(MOD_ID)
     public static EnhancedCore instance;
