@@ -42,7 +42,7 @@ public class BaseContainer extends Container {
     }
 
     public void handleGuiPacket(NBTTagCompound tag, EntityPlayer player) {
-    	
+
     }
 
     /** It's stupid that I'm forced to do this, even though it's not my issue. **/

@@ -9,7 +9,7 @@ public class TabTip extends BaseTab {
     String tip;
 
     @SuppressWarnings("rawtypes")
-	public TabTip(BaseGui gui, String n, String mod) {
+    public TabTip(BaseGui gui, String n, String mod) {
         super(gui, 0);
         name = Localization.get(mod, "tab." + n);
         tip = Localization.get(mod, "tab." + n + ".info").replace("<NL>", "\n").replaceAll("<([^<]*)>", "\u00A7$1");

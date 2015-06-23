@@ -1,6 +1,5 @@
 package enhanced.base.client.gui.tabs;
 
-
 public class TabTracker {
     private static Class<? extends BaseTab> openedLeftTab;
     private static Class<? extends BaseTab> openedRightTab;

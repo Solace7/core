@@ -95,13 +95,13 @@ public class ConnectedTextures {
         for (int i = 0; i < textures.length; i++)
             textures[i] = register.registerIcon(String.format(textureLoc, i));
     }
-    
+
     public void registerIcons(ConnectedTextures t) {
-    	textures = t.textures;
+        textures = t.textures;
     }
 
-	public IIcon getIconForSideForInternal(IBlockAccess blockAccess, int x, int y, int z, int side) {
-		boolean[] connectingBlock = new boolean[4];
+    public IIcon getIconForSideForInternal(IBlockAccess blockAccess, int x, int y, int z, int side) {
+        boolean[] connectingBlock = new boolean[4];
 
         if (side == 0 || side == 1) {
             connectingBlock[0] = canConnectTo(blockAccess, x - 1, y, z);
@@ -129,10 +129,10 @@ public class ConnectedTextures {
             connectingBlock[2] = canConnectTo(blockAccess, x, y - 1, z);
             connectingBlock[3] = canConnectTo(blockAccess, x, y + 1, z);
         }
-        
+
         int indx = connectionToIndex[(connectingBlock[0] ? 8 : 0) | (connectingBlock[1] ? 4 : 0) | (connectingBlock[2] ? 2 : 0) | (connectingBlock[3] ? 1 : 0)];
 
-        if (side == 0 || side == 1) {
+        if (side == 0 || side == 1)
             if (indx == 2)
                 indx = 3;
             else if (indx == 3)
@@ -149,8 +149,7 @@ public class ConnectedTextures {
                 indx = 14;
             else if (indx == 14)
                 indx = 12;
-        }
-        
+
         return textures[indx];
-	}
+    }
 }

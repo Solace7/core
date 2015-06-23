@@ -33,11 +33,11 @@ public class PacketPipeline extends MessageToMessageCodec<FMLProxyPacket, Packet
     private LinkedList<Class<? extends PacketBase>> packets = new LinkedList<Class<? extends PacketBase>>();
     private boolean isPostInitialized = false;
     String MOD;
-    
+
     public PacketPipeline(String mod_id) {
-    	MOD = mod_id;
+        MOD = mod_id;
     }
-    
+
     @Override
     protected void decode(ChannelHandlerContext ctx, FMLProxyPacket msg, List<Object> out) throws Exception {
         ByteBuf payload = msg.payload();

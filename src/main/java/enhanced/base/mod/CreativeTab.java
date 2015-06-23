@@ -6,29 +6,29 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class CreativeTab extends CreativeTabs {
-	ItemStack item;
-	
+    ItemStack item;
+
     public CreativeTab(String name, ItemStack item) {
         super(name);
         this.item = item;
     }
-    
+
     public CreativeTab(String name) {
         super(name);
     }
-    
+
     @Override
     public ItemStack getIconItemStack() {
-    	return item == null ? new ItemStack(Blocks.fire) : item;
+        return item == null ? new ItemStack(Blocks.fire) : item;
     }
 
     @Override
     public Item getTabIconItem() {
         return null;
     }
-    
+
     public CreativeTab setItem(ItemStack stack) {
-    	item = stack;
-    	return this;
+        item = stack;
+        return this;
     }
 }

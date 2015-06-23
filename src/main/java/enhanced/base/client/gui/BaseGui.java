@@ -171,7 +171,7 @@ public class BaseGui extends GuiContainer {
 
         if (texture != null) {
             mc.renderEngine.bindTexture(texture);
-            drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, (hasSingleTexture ? ySize : containerSize + (hasSeperateInventories ? 0 : 6)));
+            drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, hasSingleTexture ? ySize : containerSize + (hasSeperateInventories ? 0 : 6));
         } else {
             mc.renderEngine.bindTexture(resizableInterfaceTexture);
 
@@ -217,9 +217,9 @@ public class BaseGui extends GuiContainer {
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         }
     }
-    
+
     protected void drawGuiBackgroundLayer(float f, int i, int j) {
-    	drawGuiBackgroundLayer(f, i, j);
+        drawGuiBackgroundLayer(f, i, j);
     }
 
     @Override

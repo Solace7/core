@@ -7,8 +7,8 @@ import enhanced.base.utilities.Localization;
 import enhanced.core.EnhancedCore;
 
 public class TabRedstoneFlux extends BaseTab {
-	IEnergyHandler handler;
-	int powerCostPerTick = 0;
+    IEnergyHandler handler;
+    int powerCostPerTick = 0;
 
     public TabRedstoneFlux(BaseGui gui, IEnergyHandler h) {
         super(gui);
@@ -28,7 +28,7 @@ public class TabRedstoneFlux extends BaseTab {
         parent.getFontRenderer().drawString(handler.getEnergyStored(ForgeDirection.UNKNOWN) + " RF", posX + 17, posY + 57, 0x000000);
 
         parent.getFontRenderer().drawStringWithShadow(Localization.get(EnhancedCore.MOD_ID, "tab.redstoneFlux.powerUsage"), posX + 10, posY + 70, 0xAAAAAA);
-        parent.getFontRenderer().drawString((powerCostPerTick * 20) + " RF/s", posX + 17, posY + 83, 0x000000);
+        parent.getFontRenderer().drawString(powerCostPerTick * 20 + " RF/s", posX + 17, posY + 83, 0x000000);
         parent.getFontRenderer().drawString(powerCostPerTick + " RF/t", posX + 17, posY + 94, 0x000000);
     }
 
@@ -36,12 +36,14 @@ public class TabRedstoneFlux extends BaseTab {
     public void drawFullyClosed() {
 
     }
-    
+
     /**
      * Sets the power cost per tick
-     * @param power Power cost per tick
+     *
+     * @param power
+     *            Power cost per tick
      */
     public void setPowerCost(int power) {
-    	powerCostPerTick = power;
+        powerCostPerTick = power;
     }
 }

@@ -6,11 +6,11 @@ import cpw.mods.fml.common.Loader;
 import enhanced.core.EnhancedCore;
 
 public class ComputerCraft {
-	public static final String MOD_ID = "ComputerCraft";
-	static boolean failed = false;
-	
+    public static final String MOD_ID = "ComputerCraft";
+    static boolean failed = false;
+
     @SuppressWarnings({ "rawtypes", "unchecked" })
-	public static void registerPeripheralProvider(Object o) {
+    public static void registerPeripheralProvider(Object o) {
         if (!Loader.isModLoaded(MOD_ID) || failed)
             return;
 

@@ -9,13 +9,13 @@ import enhanced.base.utilities.Localization;
 public class LogOnHandler {
     boolean displayed;
     String LATEST = null, RUNNING = null, MOD = null;
-    
+
     public LogOnHandler(String latest, String running, String mod) {
-    	MOD = mod;
-    	LATEST = latest;
-    	RUNNING = running;
+        MOD = mod;
+        LATEST = latest;
+        RUNNING = running;
     }
-    
+
     @SubscribeEvent
     public void onLogIn(PlayerEvent.PlayerLoggedInEvent login) {
         if (!displayed && login.player != null && !LATEST.equals(RUNNING)) {

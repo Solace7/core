@@ -12,21 +12,21 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ThermalExpansion {
-	public static final String MOD_ID = "ThermalExpansion";
+    public static final String MOD_ID = "ThermalExpansion";
 
-	public static ItemStack getItemStack(String ID) {
+    public static ItemStack getItemStack(String ID) {
         return GameRegistry.findItemStack(MOD_ID, ID, 1);
     }
-    
+
     public static ItemStack getItemStack(String ID, int meta) {
         ItemStack stack = GameRegistry.findItemStack(MOD_ID, ID, 1);
-        
+
         if (stack != null)
             stack.setItemDamage(meta);
-        
+
         return stack;
     }
-	
+
     private ThermalExpansion() {
 
     }
