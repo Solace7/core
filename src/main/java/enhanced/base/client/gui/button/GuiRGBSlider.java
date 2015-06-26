@@ -54,7 +54,8 @@ public class GuiRGBSlider extends GuiBetterSlider {
             dragging = true;
             displayString = originalText + ": " + (int) (255 * sliderValue);
             return true;
-        } else
-            return false;
+        }
+        
+        return false;
     }
 }

@@ -58,8 +58,9 @@ public class GuiBetterSlider extends GuiButton {
 
             dragging = true;
             return true;
-        } else
-            return false;
+        }
+        
+        return false;
     }
 
     /**

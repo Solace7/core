@@ -3,7 +3,7 @@ package enhanced.base.client.gui.tabs;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.IEnergyHandler;
 import enhanced.base.client.gui.BaseGui;
-import enhanced.base.utilities.Localization;
+import enhanced.base.utilities.Localisation;
 import enhanced.core.EnhancedCore;
 
 public class TabRedstoneFlux extends BaseTab {
@@ -12,7 +12,7 @@ public class TabRedstoneFlux extends BaseTab {
 
     public TabRedstoneFlux(BaseGui gui, IEnergyHandler h) {
         super(gui);
-        name = Localization.get(EnhancedCore.MOD_ID, "tab.redstoneFlux");
+        name = Localisation.get(EnhancedCore.MOD_ID, "tab.redstoneFlux");
         handler = h;
         maxHeight = 110;
         titleColour = 0xDDDD00;
@@ -21,13 +21,13 @@ public class TabRedstoneFlux extends BaseTab {
 
     @Override
     public void drawFullyOpened() {
-        parent.getFontRenderer().drawStringWithShadow(Localization.get(EnhancedCore.MOD_ID, "tab.redstoneFlux.maxPower"), posX + 10, posY + 20, 0xAAAAAA);
+        parent.getFontRenderer().drawStringWithShadow(Localisation.get(EnhancedCore.MOD_ID, "tab.redstoneFlux.maxPower"), posX + 10, posY + 20, 0xAAAAAA);
         parent.getFontRenderer().drawString(handler.getMaxEnergyStored(ForgeDirection.UNKNOWN) + " RF", posX + 17, posY + 32, 0x000000);
 
-        parent.getFontRenderer().drawStringWithShadow(Localization.get(EnhancedCore.MOD_ID, "tab.redstoneFlux.storedPower"), posX + 10, posY + 45, 0xAAAAAA);
+        parent.getFontRenderer().drawStringWithShadow(Localisation.get(EnhancedCore.MOD_ID, "tab.redstoneFlux.storedPower"), posX + 10, posY + 45, 0xAAAAAA);
         parent.getFontRenderer().drawString(handler.getEnergyStored(ForgeDirection.UNKNOWN) + " RF", posX + 17, posY + 57, 0x000000);
 
-        parent.getFontRenderer().drawStringWithShadow(Localization.get(EnhancedCore.MOD_ID, "tab.redstoneFlux.powerUsage"), posX + 10, posY + 70, 0xAAAAAA);
+        parent.getFontRenderer().drawStringWithShadow(Localisation.get(EnhancedCore.MOD_ID, "tab.redstoneFlux.powerUsage"), posX + 10, posY + 70, 0xAAAAAA);
         parent.getFontRenderer().drawString(powerCostPerTick * 20 + " RF/s", posX + 17, posY + 83, 0x000000);
         parent.getFontRenderer().drawString(powerCostPerTick + " RF/t", posX + 17, posY + 94, 0x000000);
     }

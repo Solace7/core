@@ -47,8 +47,8 @@ public class ConnectedTextures {
 
             if (blockMeta == meta)
                 return true;
-            else
-                return subMeta == -1 ? false : meta == subMeta;
+            
+            return subMeta == -1 ? false : meta == subMeta;
         }
 
         return false;

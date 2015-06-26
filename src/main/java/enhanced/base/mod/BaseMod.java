@@ -15,7 +15,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 import enhanced.base.network.LogOnHandler;
 import enhanced.base.network.PacketPipeline;
-import enhanced.base.utilities.Localization;
+import enhanced.base.utilities.Localisation;
 
 public abstract class BaseMod {
     protected File _CONFIG_BASE;
@@ -48,7 +48,7 @@ public abstract class BaseMod {
             UPDATE_LATEST_VER = in.readLine();
 
             if (FMLCommonHandler.instance().getSide() == Side.SERVER && !UPDATE_LATEST_VER.equals(_MOD_VER))
-                getLogger().info(String.format(Localization.get(_MOD_ID, "chat.updateMessage"), UPDATE_LATEST_VER, _MOD_VER));
+                getLogger().info(String.format(Localisation.get(_MOD_ID, "chat.updateMessage"), UPDATE_LATEST_VER, _MOD_VER));
             else
                 FMLCommonHandler.instance().bus().register(new LogOnHandler(UPDATE_LATEST_VER, _MOD_VER, _MOD_ID));
         } catch (Exception e) {

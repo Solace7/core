@@ -60,7 +60,7 @@ public class DimensionCoordinates extends ChunkCoordinates {
             world = DimensionManager.getWorld(dimension);
 
             if (world == null)
-                return null; // How?
+                return null;
         }
 
         if (!world.getChunkProvider().chunkExists(posX >> 4, posY >> 4))
@@ -77,7 +77,7 @@ public class DimensionCoordinates extends ChunkCoordinates {
             world = DimensionManager.getWorld(dimension);
 
             if (world == null)
-                return null; // How?
+                return null;
         }
 
         return world;

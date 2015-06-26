@@ -217,11 +217,7 @@ public class BaseGui extends GuiContainer {
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         }
     }
-
-    protected void drawGuiBackgroundLayer(float f, int i, int j) {
-        drawGuiBackgroundLayer(f, i, j);
-    }
-
+    
     @Override
     public void updateScreen() {
         super.updateScreen();

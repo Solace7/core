@@ -1,4 +1,4 @@
-package enhanced.base.network;
+package enhanced.base.network.packet;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

@@ -4,7 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
-import enhanced.base.utilities.Localization;
+import enhanced.base.utilities.Localisation;
 
 public class LogOnHandler {
     boolean displayed;
@@ -20,7 +20,7 @@ public class LogOnHandler {
     public void onLogIn(PlayerEvent.PlayerLoggedInEvent login) {
         if (!displayed && login.player != null && !LATEST.equals(RUNNING)) {
             EntityPlayer player = login.player;
-            player.addChatMessage(new ChatComponentText(String.format(Localization.get(MOD, "chat.updateMessage"), LATEST, RUNNING)));
+            player.addChatMessage(new ChatComponentText(String.format(Localisation.get(MOD, "chat.updateMessage"), LATEST, RUNNING)));
             displayed = true;
         }
     }
