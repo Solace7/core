@@ -7,7 +7,6 @@ import net.minecraft.potion.Potion;
 import enhanced.base.mod.BaseProxy;
 import enhanced.base.network.packet.PacketGui;
 import enhanced.base.network.packet.PacketGuiData;
-import enhanced.base.network.packet.PacketRequestGui;
 import enhanced.core.EnhancedCore;
 import enhanced.core.Reference.ECItems;
 import enhanced.core.item.PotionFeatherfall;
@@ -42,7 +41,6 @@ public class ProxyCommon extends BaseProxy {
     public void registerPackets() {
         EnhancedCore.instance.packetPipeline.registerPacket(PacketGuiData.class);
         EnhancedCore.instance.packetPipeline.registerPacket(PacketGui.class);
-        EnhancedCore.instance.packetPipeline.registerPacket(PacketRequestGui.class);
     }
     
     @Override
