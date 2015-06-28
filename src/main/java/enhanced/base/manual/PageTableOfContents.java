@@ -26,6 +26,7 @@ public class PageTableOfContents extends PageManual {
         for (TOCEntry e : entries) {
             if (!e.text.isEmpty()) {
                 if (e.link.equals("HEADER")) {
+                    y += 5;
                     Minecraft.getMinecraft().fontRenderer.drawString(e.text, x, y + (count * 10), 0xAA0000);
                     y += 5;
                 } else {
