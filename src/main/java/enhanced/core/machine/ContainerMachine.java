@@ -10,8 +10,8 @@ import enhanced.base.tile.TileMachineBase;
 
 public abstract class ContainerMachine extends BaseContainer {
 	protected TileMachineBase tile;
-    protected int craftingProgress = 0;
-    protected int power = 0;
+    protected int craftingProgress = -1;
+    protected int power = -1;
 
 	public ContainerMachine(TileMachineBase machine, InventoryPlayer p) {
 		super(machine, p);

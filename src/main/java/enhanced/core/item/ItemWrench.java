@@ -15,6 +15,7 @@ import enhanced.base.item.ItemBase;
 import enhanced.base.tile.TileMachineBase;
 import enhanced.core.EnhancedCore;
 import enhanced.core.Reference.ECMod;
+import enhanced.portals.tile.TileController;
 
 public class ItemWrench extends ItemBase implements IToolWrench {
 	public ItemWrench(String n) {
@@ -47,6 +48,9 @@ public class ItemWrench extends ItemBase implements IToolWrench {
 		if (player.isSneaking()) {
 			if (t instanceof TileMachineBase) {
 				((TileMachineBase) t).getEnergyStorage(ForgeDirection.UNKNOWN).setEnergyStored(35000);
+				return !world.isRemote;
+			} else if (t instanceof TileController) {
+				((TileController) t).getEnergyStorage().setEnergyStored(16000);
 				return !world.isRemote;
 			}
 		} else {

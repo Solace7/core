@@ -11,7 +11,7 @@ import enhanced.core.machine.ContainerMachine;
 
 public class ContainerGlassFabricator extends ContainerMachine {
 	int fluid = -1;
-	int fluidAmt = 0;
+	int fluidAmt = -1;
 
 	public ContainerGlassFabricator(TileGlassFabricator glass, InventoryPlayer p) {
 		super(glass, p);
