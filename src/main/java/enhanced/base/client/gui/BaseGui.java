@@ -21,17 +21,17 @@ import enhanced.base.client.gui.elements.BaseElement;
 import enhanced.base.client.gui.tabs.BaseTab;
 import enhanced.base.client.gui.tabs.TabTracker;
 import enhanced.base.inventory.BaseContainer;
-import enhanced.core.EnhancedCore;
+import enhanced.core.Reference.ECMod;
 
 public class BaseGui extends GuiContainer {
     RenderItem itemRenderer = new RenderItem();
-    protected static final ResourceLocation playerInventoryTexture = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/player_inventory.png"), resizableInterfaceTexture = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/resizable_interace.png");
+    protected static final ResourceLocation playerInventoryTexture = new ResourceLocation(ECMod.ID, "textures/gui/player_inventory.png"), resizableInterfaceTexture = new ResourceLocation(ECMod.ID, "textures/gui/resizable_interace.png");
     protected int mouseX = 0, mouseY = 0;
     protected ResourceLocation texture;
     protected String name;
     protected ArrayList<BaseTab> tabs = new ArrayList<BaseTab>();
     protected ArrayList<BaseElement> elements = new ArrayList<BaseElement>();
-    public static final int defaultContainerSize = 144, playerInventorySize = 90, bufferSpace = 2, defaultGuiSize = defaultContainerSize + playerInventorySize + bufferSpace;
+    public static final int defaultContainerSize = 74, playerInventorySize = 90, bufferSpace = 2, defaultGuiSize = defaultContainerSize + playerInventorySize + bufferSpace;
     protected int containerSize = defaultContainerSize, guiSize = defaultGuiSize, leftNudge = 0;
     protected boolean hasSeperateInventories = true, isHidingPlayerInventory = false, hasSingleTexture = false;
 

@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 
 import cofh.api.energy.EnergyStorage;
 import enhanced.base.client.gui.BaseGui;
-import enhanced.core.EnhancedCore;
+import enhanced.core.Reference.ECMod;
 
 public class ElementRedstoneFlux extends BaseElement {
     EnergyStorage s;
@@ -16,7 +16,7 @@ public class ElementRedstoneFlux extends BaseElement {
     public ElementRedstoneFlux(BaseGui gui, int x, int y, EnergyStorage es) {
         super(gui, x, y, 14, 42);
         s = es;
-        texture = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/elements.png");
+        texture = new ResourceLocation(ECMod.ID, "textures/gui/elements.png");
     }
 
     @Override
@@ -30,7 +30,7 @@ public class ElementRedstoneFlux extends BaseElement {
         parent.getTextureManager().bindTexture(texture);
         drawTexturedModalRect(posX, posY, 228, 0, sizeX, sizeY);
 
-        if (!isDisabled()) {
+        if (!isDisabled() && s != null) {
             int height = 0, currentProgress = s.getEnergyStored(), maxProgress = s.getMaxEnergyStored();
 
             if (currentProgress > 0)

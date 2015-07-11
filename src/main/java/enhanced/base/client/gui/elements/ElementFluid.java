@@ -11,7 +11,7 @@ import net.minecraftforge.fluids.FluidTank;
 import org.lwjgl.opengl.GL11;
 
 import enhanced.base.client.gui.BaseGui;
-import enhanced.core.EnhancedCore;
+import enhanced.core.Reference.ECMod;
 
 public class ElementFluid extends BaseElement {
     FluidTank t;
@@ -20,7 +20,7 @@ public class ElementFluid extends BaseElement {
     public ElementFluid(BaseGui gui, int x, int y, FluidTank tank) {
         super(gui, x, y, 18, 62);
         t = tank;
-        texture = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/elements.png");
+        texture = new ResourceLocation(ECMod.ID, "textures/gui/elements.png");
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ElementFluid extends BaseElement {
         parent.getTextureManager().bindTexture(texture);
         drawTexturedModalRect(posX, posY, 210, 0, sizeX, sizeY);
 
-        if (t.getFluid() != null) {
+        if (t != null && t.getFluid() != null) {
             int height = 0;
             if (t.getFluidAmount() > 0) {
                 height = Math.round((float) t.getFluidAmount() * sizeY / t.getCapacity());

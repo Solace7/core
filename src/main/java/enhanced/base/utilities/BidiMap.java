@@ -2,8 +2,6 @@ package enhanced.base.utilities;
 
 import java.util.HashMap;
 
-import enhanced.portals.EnhancedPortals;
-
 /***
  * A bidirectional map
  * @param <K>
@@ -14,11 +12,6 @@ public class BidiMap<K, V> {
     HashMap<V, K> second = new HashMap<V, K>(128);
     
     public void add(K key, V val) {
-        if (first.containsKey(key))
-            EnhancedPortals.instance.getLogger().warn("Overwiting existing value for: " + key);
-        if (second.containsKey(val))
-            EnhancedPortals.instance.getLogger().warn("Overwiting existing value for: " + val);
-        
         first.put(key, val);
         second.put(val, key);
     }

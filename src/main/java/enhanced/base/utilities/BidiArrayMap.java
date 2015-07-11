@@ -4,18 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-import enhanced.portals.EnhancedPortals;
-
 public class BidiArrayMap<K, V> extends BidiMap<K, V> {
     HashMap<V, ArrayList<K>> second = new HashMap<V, ArrayList<K>>(128);
     
     @Override
     public void add(K key, V val) {
-        if (first.containsKey(key))
-            EnhancedPortals.instance.getLogger().warn("Overwiting existing value for: " + key);
-        if (second.containsKey(val))
-            EnhancedPortals.instance.getLogger().warn("Adding to: " + val);
-        
         first.put(key, val);
         
         ArrayList<K> list = getList(val);

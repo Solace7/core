@@ -9,3 +9,11 @@ enhancedcore.tab.redstoneFlux.powerUsage=Energy Usage:
 
 # Creative
 itemGroup.enhancedcore=Enhanced Core
+
+# Tiles
+tile.machine.glassFab.name=Glass Fabricator
+tile.machine.customizer.name=Customizer
+
+# Gui
+enhancedcore.gui.glassFabricator=Glass Fabricator
+enhancedcore.gui.customizer=Customizer

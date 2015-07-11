@@ -14,7 +14,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
 import enhanced.base.client.gui.BaseGui;
-import enhanced.core.EnhancedCore;
+import enhanced.core.Reference.ECMod;
 
 public abstract class BaseTab {
     static int tabExpandSpeed = 8;
@@ -33,8 +33,8 @@ public abstract class BaseTab {
     public int minHeight = 22;
     public int maxHeight = 22;
     public int currentHeight = minHeight;
-    public static final ResourceLocation DEFAULT_TEXTURE_LEFT = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/tab_left.png");
-    public static final ResourceLocation DEFAULT_TEXTURE_RIGHT = new ResourceLocation(EnhancedCore.MOD_ID, "textures/gui/tab_right.png");
+    public static final ResourceLocation DEFAULT_TEXTURE_LEFT = new ResourceLocation(ECMod.ID, "textures/gui/tab_left.png");
+    public static final ResourceLocation DEFAULT_TEXTURE_RIGHT = new ResourceLocation(ECMod.ID, "textures/gui/tab_right.png");
     public int titleColour = 0xFFFFFF;
     public IIcon icon;
     public ItemStack stack;
