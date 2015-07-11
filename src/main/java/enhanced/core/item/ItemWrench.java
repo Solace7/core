@@ -3,19 +3,12 @@ package enhanced.core.item;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.IFluidHandler;
 import buildcraft.api.tools.IToolWrench;
 import cofh.api.block.IDismantleable;
 import enhanced.base.item.ItemBase;
-import enhanced.base.tile.TileMachineBase;
 import enhanced.core.EnhancedCore;
 import enhanced.core.Reference.ECMod;
-import enhanced.portals.tile.TileController;
 
 public class ItemWrench extends ItemBase implements IToolWrench {
 	public ItemWrench(String n) {
@@ -40,26 +33,6 @@ public class ItemWrench extends ItemBase implements IToolWrench {
 
 	@Override
 	public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {
-		if (world.isRemote)
-			return false;
-		
-		TileEntity t = world.getTileEntity(x, y, z);
-
-		if (player.isSneaking()) {
-			if (t instanceof TileMachineBase) {
-				((TileMachineBase) t).getEnergyStorage(ForgeDirection.UNKNOWN).setEnergyStored(35000);
-				return !world.isRemote;
-			} else if (t instanceof TileController) {
-				((TileController) t).getEnergyStorage().setEnergyStored(16000);
-				return !world.isRemote;
-			}
-		} else {
-			if (t instanceof IFluidHandler) {
-				((IFluidHandler) t).fill(ForgeDirection.UP, new FluidStack(FluidRegistry.WATER, 1000), true);
-				return !world.isRemote;
-			}
-		}
-
 		if (player.isSneaking()) {
 			Block b = world.getBlock(x, y, z);
 
