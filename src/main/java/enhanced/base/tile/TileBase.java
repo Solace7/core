@@ -2,16 +2,16 @@ package enhanced.base.tile;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ChunkCoordinates;
-import enhanced.base.utilities.DimensionCoordinates;
+import enhanced.base.utilities.BlockPos;
+import enhanced.base.utilities.WorldPos;
 
-public class TileBase extends TileEntity {
-    public ChunkCoordinates getChunkCoordinates() {
-        return new ChunkCoordinates(xCoord, yCoord, zCoord);
+public abstract class TileBase extends TileEntity {
+    public BlockPos getBlockPos() {
+        return new BlockPos(xCoord, yCoord, zCoord);
     }
 
-    public DimensionCoordinates getDimensionCoordinates() {
-        return new DimensionCoordinates(xCoord, yCoord, zCoord, getWorldObj().provider.dimensionId);
+    public WorldPos getWorldPos() {
+        return new WorldPos(xCoord, yCoord, zCoord, getWorldObj().provider.dimensionId);
     }
     
     @Override
@@ -19,11 +19,17 @@ public class TileBase extends TileEntity {
         return false;
     }
 
-    public void packetGuiFill(ByteBuf buffer) {
-
+    public abstract void writeToGui(ByteBuf buffer);
+    public abstract void readFromGui(ByteBuf buffer);
+    
+    /*@Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
     }
-
-    public void packetGuiUse(ByteBuf buffer) {
-
-    }
+    
+    @Override
+    public Packet getDescriptionPacket() {
+        NBTTagCompound tag = new NBTTagCompound();
+        
+        return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 0, tag);
+    }*/
 }

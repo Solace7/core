@@ -1,5 +1,7 @@
 package enhanced.core.machine.customizer;
 
+import io.netty.buffer.ByteBuf;
+
 import java.util.Map.Entry;
 
 import net.minecraft.item.ItemStack;
@@ -41,4 +43,14 @@ public class TileCustomizer extends TileMachineBase {
 	protected void loadData(NBTTagCompound nbt) {
 		
 	}
+
+    @Override
+    public void writeToGui(ByteBuf buffer) {
+        
+    }
+    
+    @Override
+    public void readFromGui(ByteBuf buffer) {
+        
+    }
 }

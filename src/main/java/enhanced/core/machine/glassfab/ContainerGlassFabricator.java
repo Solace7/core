@@ -6,6 +6,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import enhanced.core.machine.ContainerMachine;
 
@@ -23,7 +24,7 @@ public class ContainerGlassFabricator extends ContainerMachine {
 	@Override
 	protected void detectChanges(List crafters) {
 		FluidStack Fluid = ((TileGlassFabricator) tile).getTank(ForgeDirection.UNKNOWN).getFluid();
-		int _fluid = Fluid == null ? -1 : Fluid.fluidID;
+		int _fluid = Fluid == null ? -1 : Fluid.getFluidID();
 		int _fluidAmt = _fluid == -1 ? 0 : Fluid.amount;
 
 		for (int i = 0; i < crafters.size(); i++) {
@@ -47,12 +48,12 @@ public class ContainerGlassFabricator extends ContainerMachine {
 			if (status == -1)
 				glass.getTank(ForgeDirection.UNKNOWN).setFluid(null);
 			else
-				glass.getTank(ForgeDirection.UNKNOWN).setFluid(new FluidStack(status, 0));
+				glass.getTank(ForgeDirection.UNKNOWN).setFluid(new FluidStack(FluidRegistry.getFluid(status), 0));
 		} else if (id == 3) {
 			FluidStack _fluid = glass.getTank(ForgeDirection.UNKNOWN).getFluid();
 
 			if (_fluid != null)
-				glass.getTank(ForgeDirection.UNKNOWN).setFluid(new FluidStack(_fluid.fluidID, status));
+				glass.getTank(ForgeDirection.UNKNOWN).setFluid(new FluidStack(_fluid.getFluid(), status));
 		}
 	}
 }

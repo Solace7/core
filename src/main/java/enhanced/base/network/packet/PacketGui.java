@@ -32,7 +32,7 @@ public class PacketGui extends PacketBase {
         buffer.writeInt(tile.xCoord);
         buffer.writeInt(tile.yCoord);
         buffer.writeInt(tile.zCoord);
-        tile.packetGuiFill(buffer);
+        tile.writeToGui(buffer);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class PacketGui extends PacketBase {
 
         if (t != null && t instanceof TileBase) {
             tile = (TileBase) t;
-            tile.packetGuiUse(buf);
+            tile.readFromGui(buf);
         }
     }
 

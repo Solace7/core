@@ -1,5 +1,7 @@
 package enhanced.core.machine.glassfab;
 
+import io.netty.buffer.ByteBuf;
+
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -124,6 +126,16 @@ public class TileGlassFabricator extends TileMachineBase implements IFluidHandle
 	protected void loadData(NBTTagCompound nbt) {
 		tank.readFromNBT(nbt);
 	}
+	
+	@Override
+    public void writeToGui(ByteBuf buffer) {
+        
+    }
+
+    @Override
+    public void readFromGui(ByteBuf buffer) {
+        
+    }
 	
 	/* IFluidHandler */
 
