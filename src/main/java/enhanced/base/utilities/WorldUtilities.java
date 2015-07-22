@@ -10,7 +10,7 @@ public class WorldUtilities {
     }
 
     public static boolean isAirBlock(WorldPos pos) {
-        return isAirBlock(pos.getWorld(), pos);
+        return isAirBlock(pos.getWorld(), new BlockPos(pos));
     }
 
     public static Block getBlock(World world, BlockPos pos) {
@@ -18,7 +18,7 @@ public class WorldUtilities {
     }
 
     public static Block getBlock(WorldPos pos) {
-        return getBlock(pos.getWorld(), pos);
+        return getBlock(pos.getWorld(), new BlockPos(pos));
     }
 
     public static TileEntity getTileEntity(World world, BlockPos pos) {
@@ -26,7 +26,7 @@ public class WorldUtilities {
     }
 
     public static TileEntity getTileEntity(WorldPos pos) {
-        return getTileEntity(pos.getWorld(), pos);
+        return getTileEntity(pos.getWorld(), new BlockPos(pos));
     }
 
     public static void setBlock(World world, BlockPos pos, Block block, int meta, int state) {
@@ -42,10 +42,10 @@ public class WorldUtilities {
     }
 
     public static void setBlock(WorldPos pos, Block block, int meta, int state) {
-        setBlock(pos.getWorld(), pos, block, meta, state);
+        setBlock(pos.getWorld(), new BlockPos(pos), block, meta, state);
     }
 
     public static void setBlockToAir(WorldPos pos) {
-        setBlockToAir(pos.getWorld(), pos);
+        setBlockToAir(pos.getWorld(), new BlockPos(pos));
     }
 }

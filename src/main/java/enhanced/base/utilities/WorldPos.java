@@ -7,21 +7,26 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 
-public class WorldPos extends BlockPos {
+public class WorldPos {
+    int xPos, yPos, zPos;
     int dim;
 
     public WorldPos() {
-        super();
+        xPos = yPos = zPos = 0;
         dim = 0;
     }
     
     public WorldPos(int x, int y, int z, int d) {
-        super(x, y, z);
+        xPos = x;
+        yPos = y;
+        zPos = z;
         dim = d;
     }
     
     public WorldPos(BlockPos b, int d) {
-        super(b.xPos, b.yPos, b.zPos);
+        xPos = b.xPos;
+        yPos = b.yPos;
+        zPos = b.zPos;
         dim = d;
     }
     
@@ -36,9 +41,8 @@ public class WorldPos extends BlockPos {
         return dim;
     }
     
-    @Override
     public boolean isCenterPoint() {
-        return super.isCenterPoint() && dim == 0;
+        return xPos == 0 && yPos == 0 && zPos == 0 && dim == 0;
     }
     
     public static WorldPos readFromNBT(NBTTagCompound nbt, String name) {
@@ -65,7 +69,6 @@ public class WorldPos extends BlockPos {
         return false;
     }
     
-    @Override
     public void writeToNBT(NBTTagCompound nbt) {
         nbt.setInteger("xPos", xPos);
         nbt.setInteger("yPos", yPos);
@@ -73,7 +76,6 @@ public class WorldPos extends BlockPos {
         nbt.setInteger("dim", dim);
     }
     
-    @Override
     public void writeToNBT(NBTTagCompound nbt, String name) {
         NBTTagCompound t = new NBTTagCompound();
         writeToNBT(t);

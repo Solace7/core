@@ -25,6 +25,12 @@ public class BlockPos {
         yPos = b.yPos;
         zPos = b.zPos;
     }
+    
+    public BlockPos(WorldPos w) {
+        xPos = w.xPos;
+        yPos = w.yPos;
+        zPos = w.zPos;
+    }
 
     public int getX() {
         return xPos;
